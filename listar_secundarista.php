@@ -1,12 +1,14 @@
 <?php
 include './connect.php';
 
-$res = pg_query("SELECT * from registrotipo");
+$res = pg_query("SELECT * from registrotipo where tipo_id = 3");
 
 include_once './header.php';
-include_once './menu.php'; ?>
+include_once './menu.php';
+?>
 
-<title>SICAES</title>
+<title>Secundarista</title>
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -23,9 +25,8 @@ include_once './menu.php'; ?>
                 <td><?= $row->id; ?></td>
                 <td><?= $row->name; ?></td>
                 <td><?= $row->tipo; ?></td>
-                <td>
-                    <a href="editar_nome.php?id=<?= $row->id; ?> & name=<?= $row->name; ?> & tipo_id<?= $row->tipo_id; ?>">
-                        <i class="glyphicon glyphicon-edit"></i>
+                <td><a href="editar_nome.php?id=<?= $row->id; ?>&name=<?= $row->name; ?>"><i class="glyphicon glyphicon-pencil"></i>
+    <!--                        <button class="btn btn-info" type="submit">Editar<i class="glyphicon glyphicon-pencil"></i></button >-->
                     </a>
                 </td>
                 <td><a href="deletar_estud.php?id=<?= $row->id; ?>"
@@ -39,4 +40,5 @@ include_once './menu.php'; ?>
 
 <a href="inserir.php"><button class="btn btn-success " type="submit">Inserir Novo <i class="glyphicon glyphicon-ok"></i> </button ></a>
 
-<?php include_once './footer.php'; ?>
+<?php
+include_once './footer.php';

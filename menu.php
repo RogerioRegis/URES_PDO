@@ -25,7 +25,7 @@
 <!--                            <li class="divider"></li>
                             <li><a href="inserir.php">Cadastrar Novo</a></li>-->
                             <li class="divider"></li>
-                            <li><a href="lista.php">Exibir Todos</a></li>
+                            <li><a href="listar_registro.php">Exibir Todos</a></li>
                         </ul>
                     </li>
                     <!--<li><a href="editar_tipo.php">Tipo</a></li>-->
@@ -34,10 +34,10 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-wrench"></i> Opções<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <!--li><a href="editar_nome.php">Editar Nome</a></li>-->
-                            <li><a href="tipo.php"><i class="glyphicon glyphicon-flag"></i> Tipo</a></li>
-                            <li><a href="usuarios.php"><i class="glyphicon glyphicon-lock"></i> Usuário</a></li>
+                            <li><a href="listar_tipo.php"><i class="glyphicon glyphicon-flag"></i> Tipo</a></li>
+                            <li><a href="listar_usuarios.php"><i class="glyphicon glyphicon-lock"></i> Usuário</a></li>
                             <li class="divider"></li>
-                            <li><a href="cadastro.php"><i class="glyphicon glyphicon-user"></i> Novo Usuário</a></li>
+                            <li><a href="inserir_usuario.php"><i class="glyphicon glyphicon-user"></i> Novo Usuário</a></li>
                             <li class="divider"></li>
                             <li><a href="https://www.google.com/+RogerioRegis" target="_blank" >Site do Desenvolvedor</a></li>      
                         </ul>

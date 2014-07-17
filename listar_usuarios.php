@@ -22,7 +22,6 @@ $res = pg_query("SELECT * from users order by login");
                 <td><?= $row->id; ?></td>
                 <td><?= $row->login; ?></td>
                 <td><?= $row->senha; ?></td>
-
                 <td>
                     <a href="editar_usuario.php?id=<?= $row->id; ?> & login=<?= $row->login; ?> & senha=<?= $row->senha; ?>">
                         <i class="glyphicon glyphicon-pencil"></i>
@@ -36,6 +35,6 @@ $res = pg_query("SELECT * from users order by login");
     </tbody>
 </table>
 
-<a href="cadastro.php"><button class="btn btn-success " type="submit">Novo usuário <i class="glyphicon glyphicon-ok"></i> </button ></a>
+<a href="inserir_usuario.php"><button class="btn btn-success " type="submit">Novo usuário <i class="glyphicon glyphicon-ok"></i> </button ></a>
 
 <?php include_once './footer.php'; ?>

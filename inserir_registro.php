@@ -1,5 +1,4 @@
 <?php
-
 include './connect.php';
 
 $name = $_POST['nome'];
@@ -7,13 +6,10 @@ $tipo_id = $_POST['tipo_id'];
 
 if ($name and $tipo_id) {
     pg_query("INSERT INTO registros(name,tipo_id) VALUES ('$name','$tipo_id')");
-    header("location: index.php");
+    header("location: listar_registro.php");
 }
-?>
 
-<?php include_once './header.php'; ?>
-<?php
-
+include_once './header.php';
 include_once './menu.php';
 ?>
 
@@ -28,7 +24,7 @@ include_once './menu.php';
             <?php $res = pg_query("SELECT * from tipo"); ?>
             <select class="form-control" name="tipo_id">
                 <?php while ($row = pg_fetch_object($res)) : ?>
-                <option value="<?= $row->id; ?>"><?= $row->tipo; ?></option>
+                    <option value="<?= $row->id; ?>"><?= $row->tipo; ?></option>
                 <?php endwhile; ?>
             </select>
         </label>
@@ -37,4 +33,4 @@ include_once './menu.php';
     </form>  
 </div>
 
-<?php include_once './footer.php'; ?>
+<?php include_once './footer.php';

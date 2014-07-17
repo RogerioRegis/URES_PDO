@@ -66,9 +66,9 @@ if ($row == 1) {
             <label class="checkbox"><input type="checkbox" value="remember-me"> Lembrar senha</label>
             <button class="btn btn-success glyphicon glyphicon-user" type="submit">Entrar</button >
             <ul class="list-unstyled"><br/>
-                <li><a href="cadastro.php"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara criar uma nona conta.')">Criar uma conta</a></li>
-                <li><a href="cadastro.php"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara redefinir seu login de usuário.')">Esqueceu seu usuário?</a></li>
-                <li><a href="cadastro.php"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara alterar sua senha.')">Esqueceu sua senha?</a></li>
+                <li><a href="inserir_usuario.php"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara criar uma nona conta.')">Criar uma conta</a></li>
+                <li><a href="inserir_usuario.php"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara redefinir seu login de usuário.')">Esqueceu seu usuário?</a></li>
+                <li><a href="inserir_usuario.php"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara alterar sua senha.')">Esqueceu sua senha?</a></li>
             </ul>
         </form>
         <div class="footer">
