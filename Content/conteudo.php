@@ -1,4 +1,4 @@
-<title>Categorias</title>
+<title>SICAES</title>
 
 <!--------------->
 <div id="content">

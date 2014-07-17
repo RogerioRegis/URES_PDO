@@ -20,7 +20,7 @@ if ($tipo) {
     <form method="post" id="formlogin" name="formlogin" >
         <label>TIPO: <input name="tipo" /></label>
         <button class="btn btn-success" type="submit">Enviar</button >
-        <button class="btn btn-default" type="submit" href="tipo.php">Cancelar</button ><hr />
+        <button class="btn btn-default" href="listar_tipo.php">Cancelar</button ><hr />
     </form>  
 </div>
 

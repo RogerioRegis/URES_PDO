@@ -17,7 +17,7 @@ if ($id and $tipo) {
         <input type="hidden" name="id" value="<?= $_GET['id'] ?>"
                <label>Nova TIPO: <input name="tipo" value="<?= $_GET['tipo'] ?>"/></label>
             <button class="btn btn-success" type="submit">Enviar</button >
-            <button class="btn btn-default" href="usuarios.php">Cancelar</button ><hr />
+            <button class="btn btn-default" href="listar_tipo.php">Cancelar</button ><hr />
     </form>
 </div>
 

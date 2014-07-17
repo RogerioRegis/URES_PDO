@@ -3,7 +3,5 @@
 include './connect.php';
 
 $id = $_GET['id'];
-
 pg_query("DELETE FROM registros WHERE id = $id");
-
-header("location: index.php");
+header("location: listar_registro.php");
