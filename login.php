@@ -1,10 +1,10 @@
 <?php
-include './conect.php';
+include './connect.php';
 
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 
-$sql = pg_query ( $con, "SELECT * FROM USERS WHERE '$login' = login and '$senha' = senha;" );
+$sql = pg_query ( $conn, "SELECT * FROM USERS WHERE '$login' = login and '$senha' = senha;" );
 $row = pg_num_rows($sql);
     
 if ($row == 1) {

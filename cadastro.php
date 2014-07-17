@@ -1,6 +1,6 @@
 <?php
 
-include './conect.php';
+include './connect.php';
 
 $email = $_POST['login'];
 $senha = $_POST['senha'];
@@ -14,9 +14,9 @@ include_once './header.php';
 include_once './menu.php';
 ?>
 
-<title>Cadastro</title>
+<title>Novo Usuário</title>
 
-<p class="text-info">Formulário de Cadastro</p>
+<p class="text-info">Formulário de Novo Usuário</p>
 
 <form method="POST">
     <div class="form">
@@ -31,5 +31,4 @@ include_once './menu.php';
 <br />
 
 <?php
-
 include_once './footer.php';

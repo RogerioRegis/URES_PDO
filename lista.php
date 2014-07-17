@@ -1,10 +1,11 @@
 <?php
-include './conect.php';
+include './connect.php';
 
 $res = pg_query("SELECT * from registrotipo");
-?>
-<?php include_once './header.php'; ?>
-<?php include_once './menu.php'; ?>
+
+include_once './header.php';
+include_once './menu.php'; ?>
+
 <title>SICAES</title>
 <table class="table table-hover">
     <thead>

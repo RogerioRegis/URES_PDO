@@ -1,5 +1,5 @@
 <?php
-include './conect.php';
+include './connect.php';
 
 $res = pg_query("SELECT * from registrotipo where tipo_id = 3");
 ?>

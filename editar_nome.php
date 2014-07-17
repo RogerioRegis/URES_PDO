@@ -1,5 +1,5 @@
 <?php
-include './conect.php';
+include './connect.php';
 
 $id = $_POST['id'];
 $name = $_POST['nome'];

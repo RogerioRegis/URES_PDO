@@ -21,12 +21,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>  Estudantes <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="secundarista.php">Secundarista</a></li>
-                            <li><a href="universitario.php">Universitário</a></li>
+                            <li><a href="inserir_registro.php">Novo Registro</a></li>
+<!--                            <li class="divider"></li>
+                            <li><a href="inserir.php">Cadastrar Novo</a></li>-->
                             <li class="divider"></li>
-                            <li><a href="inserir.php">Cadastrar Novo</a></li>
-                            <li class="divider"></li>
-                            <li><a href="index.php">Todos</a></li>
+                            <li><a href="lista.php">Exibir Todos</a></li>
                         </ul>
                     </li>
                     <!--<li><a href="editar_tipo.php">Tipo</a></li>-->

@@ -1,6 +1,6 @@
 <?php
 
-include './conect.php';
+include './connect.php';
 
 $id = $_POST['id'];
 $tipo = $_POST['tipo'];
