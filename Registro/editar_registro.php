@@ -18,7 +18,8 @@ include_once '../menu.php';
     <form method="POST">
         <input type="hidden" name="id" value="<?= $_GET['id'] ?>"
                <label>Novo nome: <input name="nome" value="<?= $_GET['name'] ?>"/>
-            <label class="control-label">Tipo:        
+            <label class="control-label">
+                Tipo: 
                 <?php $res = pg_query("SELECT * from tipo"); ?>
                 <select class="form-control" name="tipo_id">
                     <?php while ($row = pg_fetch_object($res)) : ?>
