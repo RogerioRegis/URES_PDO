@@ -1,17 +1,18 @@
 <?php
-include './connect.php';
+include '../connect.php';
 
 $id = $_POST['id'];
 $login = $_POST['login'];
 $senha = $_POST['senha'];
+$escrita = $_POST['escrita'];
 
 if ($id and $login and $senha) {
     pg_query("UPDATE users SET (login,senha) = ('$login','$senha') WHERE id = $id");
-    header("location: usuarios.php");
+    header("location: ../Usuario/listar_usuarios.php");
 }
 
-include_once './header.php';
-include_once './menu.php';
+include '../header.php';
+include '../menu.php';
 ?>
 
 <title>Editar Usuario</title>
@@ -24,3 +25,7 @@ include_once './menu.php';
             <button class="btn btn-default" href="usuarios.php">Cancelar</button ><hr />
     </form>
 </div>
+Nível de Acesso: 
+<label class="radio"><input type="checkbox" value="<?= $_GET['escrita'] ?>"> Administrador</label>
+<label class="radio"><input type="checkbox" value="<?= $_GET['leitura'] ?>"> Visitante</label>
+<?php include '../footer.php';

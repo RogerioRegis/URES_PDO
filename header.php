@@ -17,13 +17,13 @@ if (!$_SESSION['logado']) {
         <link rel="shortcut icon" href="image/favicon.ico">
 
         <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Custom styles for this template -->
-        <link href="css/jumbotron-narrow.css" rel="stylesheet">
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <link href="../css/jumbotron-narrow.css" rel="stylesheet">
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
 
     </head>
 

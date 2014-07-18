@@ -1,10 +1,12 @@
 <?php
-include './connect.php';
+include '../connect.php';
 
 $res = pg_query("SELECT * FROM tipo");
+
+include '../header.php';
+include '../menu.php';
 ?>
-<?php include_once './header.php'; ?>
-<?php include_once './menu.php'; ?>
+
 <table class="table table-hover">
     <thead>
         <tr>
@@ -33,4 +35,5 @@ $res = pg_query("SELECT * FROM tipo");
 
 <a href="inserir_tipo.php"><button class="btn btn-success " type="submit">Inserir Novo <i class="glyphicon glyphicon-ok"></i> </button ></a>
 
-<?php include_once './footer.php'; ?>
+<?php
+include '../footer.php';

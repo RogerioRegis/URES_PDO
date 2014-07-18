@@ -4,32 +4,23 @@ include './connect.php';
 $login = $_POST['login'];
 $senha = $_POST['senha'];
 
-$sql = pg_query ( $conn, "SELECT * FROM USERS WHERE '$login' = login and '$senha' = senha;" );
+$sql = pg_query($conn, "SELECT * FROM USERS WHERE '$login' = login and '$senha' = senha;");
 $row = pg_num_rows($sql);
-    
+
 if ($row == 1) {
     session_start();
 
     $_SESSION['login'] = $login;
     $_SESSION['senha'] = $senha;
 
+    $_SESSION['login'] = $row->login;
+    $_SESSION['leitura'] = $row->leitura;
+    $_SESSION['escrita'] = $row->escrita;
+    $_SESSION['permissao'] = $row->permissao;
+
     $_SESSION['logado'] = true;
     header("location: index.php");
 }
-
-?>
-
-<?php
-//include './conect.php';
-//
-//$login = $_POST['login'];
-//$senha = $_POST['senha'];
-//
-//if ($login == $_POST['login'] and $senha == $_POST['senha']) {
-//    session_start();
-//    $_SESSION['logado'] = true;
-//    header("location: index.php");
-//}
 ?>
 
 <!DOCTYPE html>

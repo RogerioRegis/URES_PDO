@@ -1,18 +1,18 @@
 <?php
 
-include './connect.php';
+include '../connect.php';
 
 $id = $_POST['id'];
 $tipo = $_POST['tipo'];
 
 if ($tipo) {
     pg_query("INSERT INTO tipo(tipo) VALUES ('$tipo')");
-    header("location: tipo.php");
+    header("location: listar_tipo.php");
 }
-?>
 
-<?php include_once './header.php'; ?>
-<?php include_once './menu.php'; ?>
+include_once '../header.php';
+include_once '../menu.php';
+?>
 
 <title>Inserir na Lista</title>
 
@@ -24,4 +24,6 @@ if ($tipo) {
     </form>  
 </div>
 
-<?php include_once './footer.php'; ?>
+<?php
+
+include_once '../footer.php';

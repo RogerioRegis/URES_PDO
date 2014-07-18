@@ -1,10 +1,10 @@
 <?php
-include './connect.php';
+include '../connect.php';
 
 $res = pg_query("SELECT * from registrotipo order by name");
 
-include_once './header.php';
-include_once './menu.php';
+include_once '../header.php';
+include_once '../menu.php';
 ?>
 
 <title>SICAES</title>
@@ -16,6 +16,7 @@ include_once './menu.php';
             <th>Tipo</th>
             <th>Editar</th>
             <th>Excluir</th>
+
         </tr>
     </thead>
     <tbody>
@@ -29,8 +30,8 @@ include_once './menu.php';
                         <i class="glyphicon glyphicon-edit"></i>
                     </a>
                 </td>
-                <td><a href="deletar_registro.php?id=<?= $row->id; ?>"
-
+                <td>
+                    <a href="deletar_registro.php?id=<?= $row->id; ?>"
                        onclick="return confirm('Deseja Realmente Excluir?')"><i class="glyphicon glyphicon-trash danger"></i></a>
                 </td>
             </tr>
@@ -41,4 +42,4 @@ include_once './menu.php';
 <a href="inserir_registro.php"><button class="btn btn-success " type="submit">Inserir Novo <i class="glyphicon glyphicon-ok"></i> </button ></a>
 
 <?php
-include_once './footer.php';
+include_once '../footer.php';

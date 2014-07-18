@@ -1,5 +1,5 @@
 <?php
-include './connect.php';
+include '../connect.php';
 
 $id = $_POST['id'];
 $name = $_POST['nome'];
@@ -7,10 +7,10 @@ $tipo_id = $_POST['tipo_id'];
 
 if ($id and $name and $tipo_id) {
     pg_query("UPDATE registros SET (name,tipo_id) = ('$name','$tipo_id') WHERE id = $id");
-    header("location: index.php");
+    header("location: ../Registro/listar_registro.php");
 }
-include_once './header.php';
-include_once './menu.php';
+include_once '../header.php';
+include_once '../menu.php';
 ?>
 
 <title>Editar Nome</title>
@@ -32,4 +32,4 @@ include_once './menu.php';
 </div>
 
 <?php
-include_once './footer.php';
+include_once '../footer.php';

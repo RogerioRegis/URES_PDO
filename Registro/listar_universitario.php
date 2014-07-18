@@ -1,11 +1,11 @@
 <?php
-include './connect.php';
+include '../connect.php';
 
 $res = pg_query("SELECT * from registrotipo where tipo_id = 5");
 
-include_once './header.php';
+include_once '../header.php';
 
-include_once './menu.php';
+include_once '../menu.php';
 ?>
 
 <title>Secundarista</title>
@@ -39,5 +39,5 @@ include_once './menu.php';
 
 <a href="inserir.php"><button class="btn btn-success " type="submit">Inserir Novo <i class="glyphicon glyphicon-ok"></i> </button ></a>
 
-<?php include_once './footer.php'; ?>
+<?php include_once '../footer.php'; ?>
 

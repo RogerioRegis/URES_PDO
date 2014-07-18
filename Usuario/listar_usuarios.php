@@ -1,10 +1,10 @@
 <?php
-include './connect.php';
+include '../connect.php';
 
 $res = pg_query("SELECT * from users order by login");
-?>
-<?php include_once './header.php'; ?>
-<?php include_once './menu.php'; ?>
+
+include_once '../header.php';
+include_once '../menu.php'; ?>
 
 <table class="table table-hover">
     <thead>
@@ -37,4 +37,4 @@ $res = pg_query("SELECT * from users order by login");
 
 <a href="inserir_usuario.php"><button class="btn btn-success " type="submit">Novo usuário <i class="glyphicon glyphicon-ok"></i> </button ></a>
 
-<?php include_once './footer.php'; ?>
+<?php include_once '../footer.php'; ?>

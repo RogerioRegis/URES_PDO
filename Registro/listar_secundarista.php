@@ -1,10 +1,10 @@
 <?php
-include './connect.php';
+include '../connect.php';
 
 $res = pg_query("SELECT * from registrotipo where tipo_id = 3");
 
-include_once './header.php';
-include_once './menu.php';
+include_once '../header.php';
+include_once '../menu.php';
 ?>
 
 <title>Secundarista</title>
@@ -25,11 +25,11 @@ include_once './menu.php';
                 <td><?= $row->id; ?></td>
                 <td><?= $row->name; ?></td>
                 <td><?= $row->tipo; ?></td>
-                <td><a href="editar_nome.php?id=<?= $row->id; ?>&name=<?= $row->name; ?>"><i class="glyphicon glyphicon-pencil"></i>
+                <td><a href="../Registro/editar_registro.php?id=<?= $row->id; ?>&name=<?= $row->name; ?>"><i class="glyphicon glyphicon-pencil"></i>
     <!--                        <button class="btn btn-info" type="submit">Editar<i class="glyphicon glyphicon-pencil"></i></button >-->
                     </a>
                 </td>
-                <td><a href="deletar_estud.php?id=<?= $row->id; ?>"
+                <td><a href="../Registro/deletar_registro.php?id=<?= $row->id; ?>"
 
                        onclick="return confirm('Deseja Realmente Excluir?')"><i class="glyphicon glyphicon-trash danger"></i></a>
                 </td>
@@ -38,7 +38,7 @@ include_once './menu.php';
     </tbody>
 </table>
 
-<a href="inserir.php"><button class="btn btn-success " type="submit">Inserir Novo <i class="glyphicon glyphicon-ok"></i> </button ></a>
+<a href="../Registro/inserir_registro.php"><button class="btn btn-success " type="submit">Inserir Novo <i class="glyphicon glyphicon-ok"></i> </button ></a>
 
 <?php
-include_once './footer.php';
+include_once '../footer.php';

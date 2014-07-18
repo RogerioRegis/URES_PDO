@@ -1,7 +1,7 @@
 <?php
 
-include './connect.php';
+include '../connect.php';
 
 $id = $_GET['id'];
 pg_query("DELETE FROM tipo WHERE id = $id");
-header("location: listar_tipo.php");
+header("location: ../Tipo/listar_tipo.php");
