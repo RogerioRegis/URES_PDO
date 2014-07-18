@@ -31,7 +31,8 @@ include_once "../menu.php";
     <input type="radio" name="permissao" value="1"> Administrador
     <input type="radio" name="permissao" value="2"> Visitante
     <br /><br>
-    <button class="btn btn-default">Enviar</button>
+    <button class="btn btn-success">Enviar <i class="glyphicon glyphicon-ok"></i></button>
+    <button class="btn btn-default" href="usuarios.php">Cancelar</button >
 </form>
 <br />
 

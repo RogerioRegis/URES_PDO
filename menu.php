@@ -58,9 +58,9 @@
                     <li>
                         <a>   
                             <?php if ($_SESSION['permissao'] == 2): ?>
-                                <p>Bem Vindo Superuser.</p>
+                                <p>Olá Super User</p>
                             <?php else: ?>
-                                <p>Bem vindo Visitante.</p>
+                                <p>Olá Visitante.</p>
                             <?php endif; ?>
                         </a>
                     </li>

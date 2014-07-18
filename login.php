@@ -29,15 +29,14 @@ if ($login and $senha) {
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="shortcut icon" href="image/favicon.ico">
-
-        <!-- Bootstrap core CSS -->
+        
+        <!--Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
         <link href="awesome/css/font-awesome.css" rel="stylesheet">
         <link href="awesome/scss/" rel="stylesheet">
-
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
+        
+        <!--Custom styles for this template--> 
         <link href="css/jumbotron-narrow.css" rel="stylesheet">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -48,9 +47,12 @@ if ($login and $senha) {
     <div class="container ">
         <form method="post">
             <h2>SICAES - Sistema de Cadastro de Estudantes</h2>
+            
             <h4 class="form-signin-heading"><i class="glyphicon glyphicon-log-in"></i> Login</h4>
+            
             <input type="email" name="login" class="form-control" placeholder="Email" required autofocus><br/>
             <input type="password" name="senha" class="form-control" placeholder="Senha" required>
+            
             <label class="checkbox"><input type="checkbox" value="remember-me"> Lembrar senha</label>
             <button class="btn btn-success glyphicon glyphicon-user" type="submit">Entrar</button >
             <ul class="list-unstyled"><br/>
