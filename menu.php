@@ -47,7 +47,6 @@
                         </li>
                     <?php endif; ?>
                 </ul>
-
                 <!-- <form class="navbar-form navbar-left" role="Buscar">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Buscar">
@@ -57,7 +56,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a>   
-                            <?php if ($_SESSION['permissao'] == 2): ?>
+                            <?php if ($_SESSION['permissao'] == 0): ?>
                                 <p>Olá Super User</p>
                             <?php else: ?>
                                 <p>Olá Visitante.</p>

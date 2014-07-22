@@ -17,10 +17,12 @@ if (!$_SESSION['logado']) {
 
         <!-- Bootstrap core CSS -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../awesome/scss/" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         <link href="../css/jumbotron-narrow.css" rel="stylesheet">
+        
         <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
 
