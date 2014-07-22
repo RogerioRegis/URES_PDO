@@ -1,12 +1,9 @@
 <?php
-include '../connect.php';
-
-$res = pg_query("SELECT * FROM tipo");
-
 include '../header.php';
 include '../menu.php';
 ?>
 
+<title>Tipo</title>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -17,7 +14,20 @@ include '../menu.php';
         </tr>
     </thead>
     <tbody>
-        <?php while ($row = pg_fetch_object($res)) : ?>
+
+        <?php
+        include '../connect.php';
+
+        $query = 'SELECT * FROM tipo order by id';
+
+        try {
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+        } catch (PDOexception $exp) {
+            echo $exp->getMessage();
+        }
+        while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+            ?>
             <tr>
                 <td><?= $row->id; ?></td>
                 <td><?= $row->tipo; ?></td>
@@ -29,7 +39,7 @@ include '../menu.php';
                 <td><a href="deletar_tipo.php?id=<?= $row->id; ?>"onclick="return confirm('Deseja Realmente Excluir?')"><i class="glyphicon glyphicon-trash danger"></i></a>
                 </td>
             </tr>
-        <?php endwhile; ?>
+        <?php } ?>
     </tbody>
 </table>
 

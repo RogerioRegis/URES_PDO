@@ -5,10 +5,23 @@ include '../connect.php';
 $id = $_POST['id'];
 $tipo = $_POST['tipo'];
 
-if ($tipo) {
-    pg_query("INSERT INTO tipo(tipo) VALUES ('$tipo')");
-    header("location: listar_tipo.php");
+if (isset($_POST['tipo'])) {
+    $query = 'INSERT INTO tipo(tipo) VALUES (:tipo)';
+    try {
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(':tipo', $tipo, PDO::PARAM_STR);
+        $stmt->execute();
+
+        header("location: ../Tipo/listar_tipo.php");
+    } catch (PDOexception $exp) {
+        echo $exp->getMessage();
+    }
 }
+
+//    if ($tipo) {
+//        pg_query("INSERT INTO tipo(tipo) VALUES ('$tipo')");
+//        header("location: listar_tipo.php");
+//    }
 
 include_once '../header.php';
 include_once '../menu.php';

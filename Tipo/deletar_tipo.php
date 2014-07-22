@@ -3,5 +3,16 @@
 include '../connect.php';
 
 $id = $_GET['id'];
-pg_query("DELETE FROM tipo WHERE id = $id");
-header("location: ../Tipo/listar_tipo.php");
+
+    $query = 'DELETE  FROM tipo WHERE id = :id';
+
+    try {
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        
+    } catch (PDOexception $error) {
+        echo $error->getMessage();
+    }
+
+header("Location: ../Tipo/listar_tipo.php");
