@@ -1,14 +1,10 @@
 <?php
 include '../connect.php';
 
-$id = $_GET['id'];
-$query = 'SELECT * FROM registros WHERE id = :id';
+include '../puxar.php';
+$row = puxar('registros', 'id', $conn, $_GET['id'] );
 
-$stmt = $conn->prepare($query);
-$stmt->bindValue(':id', $id, PDO::PARAM_STR);
-$stmt->execute();
-$row = $stmt->fetch(PDO::FETCH_OBJ);
-
+$id = $_POST['id'];
 $name = $_POST['nome'];
 $tipo_id = $_POST['tipo_id'];
 
@@ -29,11 +25,6 @@ if (isset($_POST['id']) and isset($_POST['nome']) and isset($_POST['tipo_id'])) 
     }
 }
 
-//if ($id and $name and $tipo_id) {
-//    pg_query("UPDATE registros SET (name,tipo_id) = ('$name','$tipo_id') WHERE id = $id");
-//    header("location: ../Registro/listar_registro.php");
-//}
-
 include_once '../header.php';
 include_once '../menu.php';
 ?>
@@ -42,7 +33,7 @@ include_once '../menu.php';
 
 <div class="col-lg-15">
     <form method="POST">
-        <input type="hidden" name="id" value="<?= $id ?>"
+        <input type="hidden" name="id" value="<?= $row->id ?>"
                <label>Novo nome:
             <input name="nome" value="<?= $row->name ?>"/>
             <label class="control-label">
