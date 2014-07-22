@@ -1,34 +1,40 @@
 <?php
-include '../connect.php';
-
-$res = pg_query("SELECT * from registrotipo order by name");
-
-include_once '../header.php';
-include_once '../menu.php';
+include '../header.php';
+include '../menu.php';
 ?>
-
-<title>SICAES</title>
+<title>Registros</title>
 <table class="table table-hover">
     <thead>
         <tr>
             <th>#</th>
             <th>Nome</th>
             <th>Tipo</th>
-            <?php if ($_SESSION['permissao'] == 2): ?>
+            <?php if ($_SESSION['permissao'] == 0): ?>
                 <th>Editar</th>
                 <th>Excluir</th>
             <?php endif; ?>
         </tr>
     </thead>
     <tbody>
-        <?php while ($row = pg_fetch_object($res)) : ?>
+
+        <?php
+        include '../connect.php';
+        $query = 'SELECT * FROM registrotipo order by name';
+        try {
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+        } catch (PDOexception $exp) {
+            echo $exp->getMessage();
+        }
+        while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+            ?>
             <tr>
                 <td><?= $row->id; ?></td>
                 <td><?= $row->name; ?></td>
                 <td><?= $row->tipo; ?></td>
                 <td> 
                     <?php if ($_SESSION['permissao'] == 2): ?>
-                        <a href="editar_registro.php?id=<?= $row->id; ?> & name=<?= $row->name; ?> & tipo_id<?= $row->tipo_id; ?>">
+                        <a href="editar_registro.php?id=<?= $row->id; ?>">
                             <i class="glyphicon glyphicon-edit"></i>
                         </a>
                     <?php endif; ?>
@@ -40,7 +46,8 @@ include_once '../menu.php';
                         </a> <?php endif; ?>
                 </td>
             </tr>
-        <?php endwhile; ?>
+        <?php } ?>
+
     </tbody>
 </table>
 <?php if ($_SESSION['permissao'] == 2): ?>

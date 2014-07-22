@@ -3,5 +3,21 @@
 include '../connect.php';
 
 $id = $_GET['id'];
-pg_query("DELETE FROM registros WHERE id = $id");
-header("location: ../Registro/listar_registro.php");
+
+    $query = 'DELETE  FROM registros WHERE id = :id';
+
+    try {
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        
+    } catch (PDOexception $error) {
+        echo $error->getMessage();
+    }
+
+header("Location: ../Registro/listar_registro.php");
+
+//$id = $_GET['id'];
+//
+//pg_query("DELETE FROM registros WHERE id = $id");
+//header("location: ../Registro/listar_registro.php");

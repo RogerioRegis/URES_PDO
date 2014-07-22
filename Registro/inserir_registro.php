@@ -4,16 +4,28 @@ include '../connect.php';
 $name = $_POST['nome'];
 $tipo_id = $_POST['tipo_id'];
 
-if ($name and $tipo_id) {
-    pg_query("INSERT INTO registros(name,tipo_id) VALUES ('$name','$tipo_id')");
-    header("location: ../Registro/listar_registro.php");
+//$name = strip_tags(trim($_POST['nome']));
+//$tipo_id = strip_tags(trim($_POST['tipo_id']));
+
+if (isset($_POST['nome'])) {
+    $query = 'INSERT INTO registros(name,tipo_id) VALUES (:nome,:tipo_id)';
+    try {
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(':nome', $name, PDO::PARAM_STR);
+        $stmt->bindValue(':tipo_id', $tipo_id, PDO::PARAM_STR);
+        $stmt->execute();
+
+        header("location: ../Registro/listar_registro.php");
+    } catch (PDOexception $exp) {
+        echo $exp->getMessage();
+    }
 }
 
 include_once '../header.php';
 include_once '../menu.php';
 ?>
 
-<title>Inserir na Lista</title>
+<title>Novo Registro</title>
 
 <div class="col-lg-15">
     <form method="post" id="formlogin" name="formlogin" >
@@ -21,9 +33,17 @@ include_once '../menu.php';
             <input name="nome" />
         </label>
         <label class="control-label">Tipo:        
-            <?php $res = pg_query("SELECT * from tipo"); ?>
+            <?php
+            $pg_sql = 'SELECT * from tipo';
+            try {
+                $read = $conn->prepare($pg_sql);
+                $read->execute();
+            } catch (PDOexception $exp) {
+                echo $exp->getMessage();
+            }
+            ?>
             <select class="form-control" name="tipo_id">
-                <?php while ($row = pg_fetch_object($res)) : ?>
+                <?php while ($row = $read->fetch(PDO::FETCH_OBJ)) : ?>
                     <option value="<?= $row->id; ?>"><?= $row->tipo; ?></option>
                 <?php endwhile; ?>
             </select>
