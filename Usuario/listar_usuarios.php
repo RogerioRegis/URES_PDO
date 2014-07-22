@@ -1,11 +1,9 @@
 <?php
-include '../connect.php';
-
-$res = pg_query("SELECT * from users order by login");
-
 include_once '../header.php';
-include_once '../menu.php'; ?>
+include_once '../menu.php';
+?>
 
+<title>Usuários</title>
 <table class="table table-hover">
     <thead>
         <tr>
@@ -17,7 +15,18 @@ include_once '../menu.php'; ?>
         </tr>
     </thead>
     <tbody>
-        <?php while ($row = pg_fetch_object($res)) : ?>
+
+        <?php
+        include '../connect.php';
+        $query = 'SELECT * FROM users ORDER BY login';
+        try {
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+        } catch (PDOexception $exp) {
+            echo $exp->getMessage();
+        }
+        while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+            ?>
             <tr>
                 <td><?= $row->id; ?></td>
                 <td><?= $row->login; ?></td>
@@ -31,7 +40,7 @@ include_once '../menu.php'; ?>
                        onclick="return confirm('Deseja Realmente Excluir?')"><i class="glyphicon glyphicon-trash danger"></i></a>
                 </td>
             </tr>
-        <?php endwhile; ?>
+        <?php } ?>
     </tbody>
 </table>
 
