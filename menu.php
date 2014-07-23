@@ -56,7 +56,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a>   
-                            <?php if ($_SESSION['permissao'] == 0): ?>
+                            <?php if ($_SESSION['permissao'] == 2): ?>
                                 <p>Olá Super User</p>
                             <?php else: ?>
                                 <p>Olá Visitante.</p>
