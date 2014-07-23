@@ -2,6 +2,9 @@
 
 include '../connect.php';
 
+include '../puxar.php';
+$row = pull('tipo', 'id', $conn, $_GET['id']);
+
 $id = $_POST['id'];
 $tipo = $_POST['tipo'];
 
@@ -18,11 +21,6 @@ if (isset($_POST['tipo'])) {
     }
 }
 
-//    if ($tipo) {
-//        pg_query("INSERT INTO tipo(tipo) VALUES ('$tipo')");
-//        header("location: listar_tipo.php");
-//    }
-
 include_once '../header.php';
 include_once '../menu.php';
 ?>
@@ -30,7 +28,7 @@ include_once '../menu.php';
 <title>Inserir na Lista</title>
 
 <div class="col-lg-15">
-    <form method="post" id="formlogin" name="formlogin" >
+    <form method="POST">
         <label>TIPO: <input name="tipo" /></label>
         <button class="btn btn-success" type="submit">Enviar</button >
         <button class="btn btn-default" href="listar_tipo.php">Cancelar</button ><hr />

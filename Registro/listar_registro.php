@@ -2,6 +2,7 @@
 include '../header.php';
 include '../menu.php';
 ?>
+
 <title>Registros</title>
 <table class="table table-hover">
     <thead>
@@ -9,7 +10,7 @@ include '../menu.php';
             <th>#</th>
             <th>Nome</th>
             <th>Tipo</th>
-            <?php if ($_SESSION['permissao'] == 0): ?>
+            <?php if ($_SESSION['permissao'] == 2): ?>
                 <th>Editar</th>
                 <th>Excluir</th>
             <?php endif; ?>

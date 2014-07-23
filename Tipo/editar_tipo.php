@@ -1,10 +1,10 @@
 <?php
-// chama a conexao com o banco de dados
+
 include '../connect.php';
 
 // pega o objeto no banco
 include '../puxar.php';
-$row = puxar('tipo', 'id', $conn, $_GET['id'] );
+$row = pull('tipo', 'id', $conn, $_GET['id'] );
 
 // armazena dados nas variáveis
 $id = $_POST['id'];
@@ -12,11 +12,11 @@ $tipo = $_POST['tipo'];
 
 // verifica se o formulario foi preenchido
 if (isset($id) && isset($tipo)) {
-    // atualiza no banco de dados
+    // edita no banco de dados
     $query = 'UPDATE tipo SET (tipo) = (:tipo) WHERE id = :id';
     try {
         $stmt = $conn->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->bindValue(':tipo', $tipo, PDO::PARAM_STR);
         $stmt->execute();
 

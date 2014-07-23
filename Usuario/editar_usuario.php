@@ -2,7 +2,7 @@
 include '../connect.php';
 
 include '../puxar.php';
-$row = puxar('users', 'id', $conn, $_GET['id']);
+$row = pull('users', 'id', $conn, $_GET['id']);
 
 $id = $_POST['id'];
 $login = $_POST['login'];
@@ -13,7 +13,7 @@ if (isset($_POST['id']) && isset($_POST['login']) && isset($_POST['senha']) && i
     $query = 'UPDATE users SET (login,senha,permissao) = (:login,:senha,:permissao) WHERE id = :id';
     try {
         $stmt = $conn->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->bindValue(':login', $login, PDO::PARAM_STR);
         $stmt->bindValue(':senha', $senha, PDO::PARAM_STR);
         $stmt->bindValue(':permissao', $permissao, PDO::PARAM_STR);

@@ -4,9 +4,6 @@ include '../connect.php';
 $name = $_POST['nome'];
 $tipo_id = $_POST['tipo_id'];
 
-//$name = strip_tags(trim($_POST['nome']));
-//$tipo_id = strip_tags(trim($_POST['tipo_id']));
-
 if (isset($_POST['nome'])) {
     $query = 'INSERT INTO registros(name,tipo_id) VALUES (:nome,:tipo_id)';
     try {

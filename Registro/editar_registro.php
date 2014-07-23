@@ -2,7 +2,7 @@
 include '../connect.php';
 
 include '../puxar.php';
-$row = puxar('registros', 'id', $conn, $_GET['id'] );
+$row = pull('registros', 'id', $conn, $_GET['id'] );
 
 $id = $_POST['id'];
 $name = $_POST['nome'];
@@ -14,7 +14,7 @@ if (isset($_POST['id']) and isset($_POST['nome']) and isset($_POST['tipo_id'])) 
 
     try {
         $stmt = $conn->prepare($query);
-        $stmt->bindValue(':id', $id, PDO::PARAM_STR);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->bindValue(':nome', $name, PDO::PARAM_STR);
         $stmt->bindValue(':tipo_id', $tipo_id, PDO::PARAM_STR);
         $stmt->execute();
