@@ -21,7 +21,6 @@ if (isset($_POST['tipo'])) {
     }
 }
 
-
 include_once '../header.php';
 include_once '../menu.php';
 ?>
