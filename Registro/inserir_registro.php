@@ -31,9 +31,9 @@ include_once '../menu.php';
         </label>
         <label class="control-label">Tipo:        
             <?php
-            $pg_sql = 'SELECT * from tipo';
+            $query = 'SELECT * from tipo';
             try {
-                $read = $conn->prepare($pg_sql);
+                $read = $conn->prepare($query);
                 $read->execute();
             } catch (PDOexception $exp) {
                 echo $exp->getMessage();
@@ -46,8 +46,9 @@ include_once '../menu.php';
             </select>
         </label>
         <button class="btn btn-success" type="submit">Enviar</button >
-        <a href="../Registro/listar_registro.php"><button class="btn btn-default" type="button">Cancelar</button ></a><hr />
+        <a href="listar_registro.php"><button class="btn btn-default" type="button">Cancelar</button ></a>
     </form>  
+    <br />
 </div>
 
 <?php

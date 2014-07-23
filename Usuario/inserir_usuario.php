@@ -42,7 +42,7 @@ include_once "../menu.php";
     <input type="radio" name="permissao" value="1"> Visitante
     <br /><br>
     <button class="btn btn-success">Enviar <i class="glyphicon glyphicon-ok"></i></button>
-    <button class="btn btn-default" href="usuarios.php">Cancelar</button>
+    <a href="usuarios.php"><button class="btn btn-default" type="button">Cancelar</button></a>
 </form>
 <br />
 

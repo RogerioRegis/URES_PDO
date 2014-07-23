@@ -21,6 +21,7 @@ if (isset($_POST['tipo'])) {
     }
 }
 
+
 include_once '../header.php';
 include_once '../menu.php';
 ?>
@@ -31,8 +32,9 @@ include_once '../menu.php';
     <form method="POST">
         <label>TIPO: <input name="tipo" /></label>
         <button class="btn btn-success" type="submit">Enviar</button >
-        <button class="btn btn-default" href="listar_tipo.php">Cancelar</button ><hr />
-    </form>  
+        <a href="listar_tipo.php">  <button class="btn btn-default" type="button">Cancelar</button ></a>
+    </form> 
+    <br />
 </div>
 
 <?php

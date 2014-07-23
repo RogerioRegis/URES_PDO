@@ -54,7 +54,7 @@ include_once '../menu.php';
                 </select>
             </label>
             <button class="btn btn-success" type="submit">Salvar</button >
-            <button class="btn btn-default" href="../Registro/listar_registro.php">Cancelar</button >
+            <a href="../Registro/listar_registro.php"><button class="btn btn-default" type="button">Cancelar</button ></a>
             <hr />
     </form>
 </div>
