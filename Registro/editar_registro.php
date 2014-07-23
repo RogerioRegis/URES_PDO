@@ -39,16 +39,16 @@ include_once '../menu.php';
             <label class="control-label">
                 Tipo: 
                 <?php
-                $pg_sql = 'SELECT * from tipo';
+                $query = 'SELECT * from tipo';
                 try {
-                    $read = $conn->prepare($pg_sql);
-                    $read->execute();
+                    $stmt = $conn->prepare($query);
+                    $stmt->execute();
                 } catch (PDOexception $exp) {
                     echo $exp->getMessage();
                 }
                 ?>
                 <select class="form-control" name="tipo_id">
-                    <?php while ($option = $read->fetch(PDO::FETCH_OBJ)) : ?>
+                    <?php while ($option = $stmt->fetch(PDO::FETCH_OBJ)) : ?>
                         <option value="<?= $option->id; ?>"><?= $option->tipo; ?></option>
                     <?php endwhile; ?>
                 </select>

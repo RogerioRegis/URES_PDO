@@ -21,21 +21,6 @@ if (isset($_POST['login'])) {
     header('location: index.php');
 }
 
-//------------------------------------------------------------------------------
-//if ($login and $senha) {
-//    $res = pg_query("SELECT * from users where login = '$login' and senha='$senha'");
-//    session_start();
-//    while ($row = pg_fetch_object($res)) {
-////        var_dump($row);
-//        $_SESSION['login'] = $row->login;
-////        $_SESSION['leitura'] = $row->leitura;
-////        $_SESSION['escrita'] = $row->escrita;
-//        $_SESSION['permissao'] = $row->permissao;
-//
-//        $_SESSION['logado'] = true;
-//    }
-//    header("location: index.php");
-//}
 ?>
 
 <!DOCTYPE html>
