@@ -1,7 +1,11 @@
 <?php
 
+$dsn = 'pgsql:host=localhost; dbname=sicaes';
+$user = 'sicaes';
+$password = 'sicaes';
 try {
-    $conn = new PDO("pgsql:host=localhost dbname=sicaes user=sicaes password=sicaes");
-} catch (PDOException $exp) {
-    print $exp->getMessage();
+    $conn = new PDO($dsn, $user, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo $e->getMessage();
 }
