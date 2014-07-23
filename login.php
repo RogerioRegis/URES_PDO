@@ -2,16 +2,16 @@
 include './connect.php';
 
 $login = $_POST['login'];
-$senha = $_POST['senha'];
+$senha = ($_POST['senha']);
 
-if (isset($_POST['login'])) {
+if (isset($_POST['login']) && isset($_POST['senha'])) {
     $stmt = $conn->prepare(" SELECT * FROM users WHERE login = :login AND senha = :senha ");
-    $stmt->bindValue(':login', $login, PDO::PARAM_STR);
-    $stmt->bindValue(':senha', $senha, PDO::PARAM_STR);
+    $stmt->bindValue(':login', $login);
+    $stmt->bindValue(':senha', $senha);
     $stmt->execute();
-    
+
     session_start();
-    
+
     $row = $stmt->fetch(PDO::FETCH_OBJ);
 
     $_SESSION['login'] = $row->login;
@@ -20,7 +20,6 @@ if (isset($_POST['login'])) {
 
     header('location: index.php');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +63,7 @@ if (isset($_POST['login'])) {
             <button class="btn btn-success glyphicon glyphicon-user" type="submit">Entrar</button >
 
             <ul class="list-unstyled"><br/>
-                <li><a href="#"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara criar uma nona conta.')">Criar uma conta</a></li>
+                <li><a href="#"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara criar uma nova conta.')">Criar uma conta</a></li>
                 <li><a href="#"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara redefinir seu login de usuário.')">Esqueceu seu usuário?</a></li>
                 <li><a href="#"onclick="return confirm('Entre em contato com rog_reg@hotmail.com\n\npara alterar sua senha.')">Esqueceu sua senha?</a></li>
             </ul>
