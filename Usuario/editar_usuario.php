@@ -6,7 +6,7 @@ $row = pull('users', 'id', $conn, $_GET['id']);
 
 $id = $_POST['id'];
 $login = $_POST['login'];
-$senha = $_POST['senha'];
+$senha = md5($_POST['senha']);
 $permissao = $_POST['permissao'];
 
 if (isset($_POST['id']) && isset($_POST['login']) && isset($_POST['senha']) && isset($_POST['permissao'])) {

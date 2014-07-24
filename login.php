@@ -2,12 +2,12 @@
 include './connect.php';
 
 $login = $_POST['login'];
-$senha = ($_POST['senha']);
+$senha = $_POST['senha'];
 
 if (isset($_POST['login']) && isset($_POST['senha'])) {
     $stmt = $conn->prepare(" SELECT * FROM users WHERE login = :login AND senha = :senha ");
-    $stmt->bindValue(':login', $login);
-    $stmt->bindValue(':senha', $senha);
+    $stmt->bindValue(':login', $login, PDO::PARAM_STR);
+    $stmt->bindValue(':senha', md5($senha), PDO::PARAM_STR);
     $stmt->execute();
 
     session_start();

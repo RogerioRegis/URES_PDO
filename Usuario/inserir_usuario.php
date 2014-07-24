@@ -3,7 +3,7 @@
 include '../connect.php';
 
 $email = $_POST['login'];
-$senha = $_POST['senha'];
+$senha = md5($_POST['senha']);
 $permissao = $_POST['permissao'];
 
 if (isset($_POST['login'])) {
