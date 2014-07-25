@@ -58,7 +58,7 @@ if (isset($_POST['login']) && isset($_POST['senha'])) {
             <input type="email" name="login" class="form-control" placeholder="Email" required autofocus><br/>
             <input type="password" name="senha" class="form-control" placeholder="Senha" required>
             <br />
-            <input type="checkbox" value="remember-me"> Lembrar senha <br />
+            <label><input type="checkbox" value="remember-me"> Lembrar senha <br /></label>
             <br />
             <button class="btn btn-success glyphicon glyphicon-user" type="submit">Entrar</button >
 

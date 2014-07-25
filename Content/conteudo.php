@@ -1,6 +1,5 @@
 <title>SICAES</title>
 
-<!--------------->
 <div id="content">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
         <li class="active"><a href="#Categoria1" data-toggle="tab"><img src="image/icons/zoo_blog.png"><br/>Categoria 1</a></li>
@@ -53,5 +52,3 @@
     });
 </script>
 <script type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
-
-<!------------------->

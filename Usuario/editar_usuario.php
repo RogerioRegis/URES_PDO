@@ -43,8 +43,8 @@ include '../menu.php';
             <br /><br />
 
             Nível de Acesso: 
-            <input type="radio" name="permissao" value="<?= $row->permissao ?>"> Administrador</label>
-        <input type="radio" name="permissao" value="<?= $row->permissao ?>"> Visitante</label>
+            <label><input type="radio" name="permissao" value="<?= $row->permissao ?>"> Administrador</label> &nbsp;
+            <label><input type="radio" name="permissao" value="<?= $row->permissao ?>"> Visitante</label>
     </form>
 </div>
 

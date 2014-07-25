@@ -38,8 +38,8 @@ include_once "../menu.php";
         <input type="password" name="senha" class="form-control" placeholder="Senha">
     </div>
     Nível de Acesso: 
-    <input type="radio" name="permissao" value="2"> Administrador
-    <input type="radio" name="permissao" value="1"> Visitante
+    <label><input type="radio" name="permissao" value="2"> Administrador</label> &nbsp;
+    <label><input type="radio" name="permissao" value="1"> Visitante</label>
     <br /><br>
     <button class="btn btn-success">Enviar <i class="glyphicon glyphicon-ok"></i></button>
     <a href="listar_usuarios.php"><button class="btn btn-default" type="button">Cancelar</button></a>
